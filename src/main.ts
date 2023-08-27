@@ -156,7 +156,7 @@ Events.on(render, "afterRender", function() {
     const imageData = images[index % images.length];
     const image = new Image();
     image.src = imageData;
-    const scale = 0.2;
+    const scale = 0.4;
     context.globalAlpha = 0.5;
     context.drawImage(
       image,
@@ -228,15 +228,15 @@ const createBox = (
       sprite: {
         single: true,
         texture: texture,
-        xScale: 0.2,
-        yScale: 0.2,
+        xScale: 0.4,
+        yScale: 0.4,
       },
     },
     friction: 1,
     frictionAir: 0.05,
     restitution: 0.1,
   });
-  Body.scale(box, 0.2, 0.2);
+  Body.scale(box, 0.4, 0.4);
   return box;
 };
 const handleTouch = () => {
