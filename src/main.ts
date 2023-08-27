@@ -18,6 +18,20 @@ import KitunePng from "@/assets/whowatch/kitune.png"
 import KumachanPng from "@/assets/whowatch/kumachan.png"
 import ObakePng from "@/assets/whowatch/obake.png"
 import WhowatchkunNuigurumiPng from "@/assets/whowatch/whowatchkun-nuigurumi.png"
+import ArupakaPng from "@/assets/whowatch/arupaka.png"
+import CoolPng from "@/assets/whowatch/cool.png"
+import CutePng from "@/assets/whowatch/cute.png"
+import FreePng from "@/assets/whowatch/free.png"
+import GoldKumachanPng from "@/assets/whowatch/gold_kumachan.png"
+import JewelryBearPng from "@/assets/whowatch/jewelry_bear.png"
+import KoaraPng from "@/assets/whowatch/koara.png"
+import KumachanGiraffePng from "@/assets/whowatch/kumachan-giraffe.png"
+import KumachanLeopardPng from "@/assets/whowatch/kumachan-leopard.png"
+import KumachanTigerPng from "@/assets/whowatch/kumachan-tiger.png"
+import MedetaiPng from "@/assets/whowatch/medetai.png"
+import MoriagenekoEmeraldPng from "@/assets/whowatch/moriageneko-emerald.png"
+import MoriagenekoRubyPng from "@/assets/whowatch/moriageneko-ruby.png"
+import MoriagenekoSapphirePng from "@/assets/whowatch/moriageneko-sapphire.png"
 import data from "@/assets/data.json"
 
 const engine = Engine.create();
@@ -121,6 +135,20 @@ const images = [
   KumachanPng,
   ObakePng,
   WhowatchkunNuigurumiPng,
+  ArupakaPng,
+  CoolPng,
+  CutePng,
+  FreePng,
+  GoldKumachanPng,
+  JewelryBearPng,
+  KoaraPng,
+  KumachanGiraffePng,
+  KumachanLeopardPng,
+  KumachanTigerPng,
+  MedetaiPng,
+  MoriagenekoEmeraldPng,
+  MoriagenekoRubyPng,
+  MoriagenekoSapphirePng,
 ];
 Events.on(render, "afterRender", function() {
   if (placeholderPosition) {
@@ -146,6 +174,21 @@ let kituneVertices: Vector[][] | undefined;
 let kumachanVertices: Vector[][] | undefined;
 let obakeVertices: Vector[][] | undefined;
 let whowatchkunNuigurumiVertices: Vector[][] | undefined;
+let arupakaVertices: Vector[][] | undefined;
+let coolVertices: Vector[][] | undefined;
+let cuteVertices: Vector[][] | undefined;
+let freeVertices: Vector[][] | undefined;
+let goldKumachanVertices: Vector[][] | undefined;
+let jewelryBearVertices: Vector[][] | undefined;
+let koaraVertices: Vector[][] | undefined;
+let kumachanGiraffeVertices: Vector[][] | undefined;
+let kumachanLeopardVertices: Vector[][] | undefined;
+let kumachanTigerVertices: Vector[][] | undefined;
+let medetaiVertices: Vector[][] | undefined;
+let moriagenekoEmeraldVertices: Vector[][] | undefined;
+let moriagenekoRubyVertices: Vector[][] | undefined;
+let moriagenekoSapphireVertices: Vector[][] | undefined;
+
 (async function() {
   console.log("init!");
   moriageVertices = data.moriage;
@@ -155,6 +198,21 @@ let whowatchkunNuigurumiVertices: Vector[][] | undefined;
   whowatchkunNuigurumiVertices = data[
     "whowatchkun-nuigurumi"
   ];
+  arupakaVertices = data.arupaka;
+  coolVertices = data.cool;
+  cuteVertices = data.cute;
+  freeVertices = data.free;
+  goldKumachanVertices = data["gold-kumachan"];
+  jewelryBearVertices = data["jewelry-bear"];
+  koaraVertices = data.koara;
+  kumachanGiraffeVertices = data["kumachan-giraffe"];
+  kumachanLeopardVertices = data["kumachan-leopard"];
+  kumachanTigerVertices = data["kumachan-tiger"];
+  medetaiVertices = data.medetai;
+  moriagenekoEmeraldVertices = data["moriageneko-emerald"];
+  moriagenekoRubyVertices = data["moriageneko-ruby"];
+  moriagenekoSapphireVertices = data["moriageneko-sapphire"];
+
   console.log("loaded");
 })();
 
@@ -188,8 +246,22 @@ const handleTouch = () => {
     kumachanVertices,
     obakeVertices,
     whowatchkunNuigurumiVertices,
-  ][index % 5];
-  const image = images[index % 5];
+    arupakaVertices,
+    coolVertices,
+    cuteVertices,
+    freeVertices,
+    goldKumachanVertices,
+    jewelryBearVertices,
+    koaraVertices,
+    kumachanGiraffeVertices,
+    kumachanLeopardVertices,
+    kumachanTigerVertices,
+    medetaiVertices,
+    moriagenekoEmeraldVertices,
+    moriagenekoRubyVertices,
+    moriagenekoSapphireVertices,
+  ][index % 19];
+  const image = images[index % 19];
   if (!vertices) return;
   const box = createBox(
     placeholderPosition.x,
